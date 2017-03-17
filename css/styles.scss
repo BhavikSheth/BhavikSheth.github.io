@@ -1,0 +1,402 @@
+$blue: #2196F3;
+$dark-blue: #1976D2;
+$black: #222;
+$nav-height-and-top-pad: 35px;
+$divider: #BDBDBD;
+// @media all and (max-width: 719px) {
+* {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+body {
+	font-family: Roboto;
+	padding-top: $nav-height-and-top-pad;
+	background-image: url(../media/background.jpg);
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+h1 {
+	font-size: 2rem;
+	letter-spacing: 1px; 
+}
+
+h2 {
+	font-size: 1.8rem;
+	margin-bottom: 40px;
+}
+
+h3 {
+	font-size: 1.35rem;
+}
+
+h4 {
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+h6 {
+	
+}
+
+nav {
+	background-color: $blue;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	// float: left;
+	z-index: 9999; 
+	
+	.icon-home:before {
+  		content: "\e902";
+	}
+	
+	ul {
+		height: $nav-height-and-top-pad;
+		// overflow: hidden;
+	}
+	
+	li {
+		list-style-type: none;
+		display: inline-block;
+	}
+
+	a {
+		color: #FFF;
+		text-decoration: none;
+		padding: 6px;
+		font-size: 1.1rem;
+		position: relative;
+		float: left; 
+		// line-height: 5px;
+		-webkit-transition: all .2s ease;
+		-moz-transition: all .2s ease;
+		-ms-transition: all .2s ease;
+		-o-transition: all .2s ease;
+		transition: all .2s ease;
+	}
+
+	a:hover {
+		background-color: $dark-blue;
+	}
+
+	.fa {
+		font-size: 1.4rem;
+		position: relative;
+		top: 1px;
+	}
+
+	#scroll-line {
+		height: 2px;
+		width: 0%;
+		background: $black;
+		margin-bottom: -2px;
+	}
+}
+
+nav:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#landing {
+	padding: 40px;
+	text-transform: uppercase;
+	border-bottom: 1px solid $divider;
+	
+	h1 {
+		margin: 100px 0 10px 0;
+	}
+
+	h3 {
+		margin-bottom: 100px;
+	}
+}
+
+#about {
+	padding: 40px 20px;
+	background-color: #EEE;
+	border-bottom: 2px solid $divider;
+	
+	img {
+		width: 90%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		border: 3px solid $blue;
+		margin-bottom: 30px;
+	}
+
+	p {
+		text-align: justify;
+	}
+}
+
+#projects {
+	background-color: #EEE;
+	padding: 40px 20px;
+	border-bottom: 1px solid $divider;
+	
+	.project {
+		margin-bottom: 40px;
+		background-color: #FFF;
+		width: 100%;
+		-webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
+		box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
+	}
+
+	.project:last-child {
+		margin-bottom: 0;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	h4 {
+		margin: 10px;
+	}
+
+	h5 {
+		margin-bottom: 10px; 
+	}
+
+	.view {
+		border-top: 1px solid $divider;
+		// height: 100%;
+		
+		p {
+			padding: 10px;
+		}
+
+		p:after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+		a {
+			width: 49.5%;
+			color: $black;
+			text-decoration: none;
+			
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:first-child {
+			float: left;
+			border-right: 1px solid $divider;
+		}
+
+		a:last-child {
+			float: right;
+		}
+	}
+}
+
+#skills {
+	padding: 40px 20px;
+	border-bottom: 1px solid $divider;
+	
+	ul {
+		
+	}
+
+	li {
+		list-style: none;
+		display: inline-block;
+		margin: 15px;
+	}
+
+	i {
+		color: $blue;
+		font-size: 3.6rem;
+		-webkit-transition: all .25s ease;
+		-moz-transition: all .25s ease;
+		-ms-transition: all .25s ease;
+		-o-transition: all .25s ease;
+		transition: all .25s ease;
+	}
+
+	i:hover {
+		color: $dark-blue;    
+	}
+}
+
+#contact-form {
+	padding: 40px 20px;
+	padding-bottom: 30px;
+	
+	form {
+		background: none;
+		
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    $black;
+		    opacity: 0.5;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    $black;
+		   opacity: 0.5;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    $black;
+		   opacity: 0.5;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    $black;
+		   opacity: 0.5;
+		}
+		
+		* {
+			width: 100%;
+			padding: 10px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			resize: none;
+			font-size: 16px;
+		}
+
+		input {
+			margin-bottom: 10px;
+			border: 3px solid $blue;
+			background: transparent;
+			text-align: left;
+		}
+
+		input:focus {
+			outline: none;
+			border: 3px solid $dark-blue;
+		}
+
+		textarea {
+			margin-bottom: 20px;
+			height: 100%;
+			border: 3px solid $blue;
+			height: 150px;
+			background: transparent;
+			text-align: left;
+		}
+
+		textarea:focus {
+			outline: none;
+			border: 3px solid $dark-blue;
+		}
+
+		button {
+			background: $blue;
+			color: #FFF;
+			border: none;
+			-webkit-transition: all .25s ease;
+			-moz-transition: all .25s ease;
+			-ms-transition: all .25s ease;
+			-o-transition: all .25s ease;
+			transition: all .25s ease;
+		}
+
+		button:focus {
+			outline: none;
+		}
+
+		button:hover {
+			background: #1976D2;
+		}
+	}
+
+	.icon {
+		
+	}
+}
+
+
+#contact {
+	padding-bottom: 30px;
+	a {
+		padding: 7px;
+	}
+
+	.icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		
+	}
+
+	.icon-linkedin {
+		fill: #FFF;
+		background-color: $blue;
+	}
+
+	.icon-linkedin:hover {
+		background-color: $dark-blue;
+	}
+
+	.icon-github {
+		fill: $blue;
+		background-color: #FFF;
+	}
+
+	.icon-github:hover {
+		fill: $dark-blue;
+	}
+
+	.icon-codepen {
+		fill: #FFF;
+		background-color: $blue; 
+	}
+
+	.icon-codepen:hover {
+		background-color: $dark-blue;
+	}
+
+	.icon-twitter {
+		fill: #FFF;
+		background-color: $blue;
+	}
+
+	.icon-twitter:hover {
+		background-color: $dark-blue;
+	}
+
+	.icon-mail-envelope-closed {
+		fill: #FFF;
+		background-color: $blue;
+	}
+
+	.icon-mail-envelope-closed:hover {
+		background-color: $dark-blue;
+	}
+
+	.icon-cool2 {
+		fill: $blue;
+		background-color: #FFF;
+	}
+
+	.icon-cool2:hover {
+		fill: $dark-blue;
+	}
+}
+
+footer {
+	background-color: $black;
+	color: #FFF; 
+	padding: 7px;
+	font-weight: 400; 
+}
+// }
+
+// I created this  portfolio without using Bootstrap or Flexbox to prove I can create responsive websites without Bootstrap and have brilliant css skills to position and layout everything correctly without the use of Flexbox :D
+
+
