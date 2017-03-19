@@ -1,7 +1,5 @@
-# BhavikSheth.github.io
+[BhavikSheth.github.io](https://BhavikSheth.github.io)
 
 My Portfolio
 
-No Bootstrap
-No Flexbox
-Mobile First
+No Bootstrap, No Flexbox, and Mobile First
