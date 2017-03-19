@@ -13,15 +13,15 @@ body {
   background-size: cover; }
 
 h1 {
-  font-size: 2rem;
+  font-size: 10vw;
   letter-spacing: 1px; }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 40px; }
+  font-size: 9vw;
+  padding-bottom: 40px; }
 
 h3 {
-  font-size: 1.35rem; }
+  font-size: 6.6vw; }
 
 h4 {
   font-size: 1.2rem; }
@@ -35,6 +35,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  float: left;
   z-index: 9999; }
   nav .icon-home:before {
     content: "\e902"; }
@@ -42,14 +43,15 @@ nav {
     height: 35px; }
   nav li {
     list-style-type: none;
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 5px; }
   nav a {
     color: #FFF;
     text-decoration: none;
     padding: 6px;
     font-size: 1.1rem;
     position: relative;
-    float: left;
+    width: 15%;
     -webkit-transition: all .2s ease;
     -moz-transition: all .2s ease;
     -ms-transition: all .2s ease;
@@ -90,9 +92,13 @@ nav:after {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     border: 3px solid #2196F3;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    max-width: 450px; }
   #about p {
-    text-align: justify; }
+    text-align: justify;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.1rem; }
 
 #projects {
   background-color: #EEE;
@@ -104,7 +110,9 @@ nav:after {
     width: 100%;
     -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25); }
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    max-width: 350px; }
   #projects .project:last-child {
     margin-bottom: 0; }
   #projects img {
@@ -133,6 +141,11 @@ nav:after {
     #projects .view a:last-child {
       float: right; }
 
+#projects:after {
+  display: block;
+  content: "";
+  clear: both; }
+
 #skills {
   padding: 40px 20px;
   border-bottom: 1px solid #BDBDBD; }
@@ -155,7 +168,8 @@ nav:after {
   padding: 40px 20px;
   padding-bottom: 30px; }
   #contact-form form {
-    background: none; }
+    background: none;
+    margin: 0 auto; }
     #contact-form form ::-webkit-input-placeholder {
       /* WebKit, Blink, Edge */
       color: #222;
@@ -179,7 +193,7 @@ nav:after {
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       resize: none;
-      font-size: 16px; }
+      font-size: 1rem; }
     #contact-form form input {
       margin-bottom: 10px;
       border: 3px solid #2196F3;
@@ -256,5 +270,57 @@ footer {
   color: #FFF;
   padding: 7px;
   font-weight: 400; }
+
+@media all and (min-width: 480px) {
+  h1 {
+    font-size: 8.5vw; }
+
+  h2 {
+    font-size: 6vw; }
+
+  h3 {
+    font-size: 5.7vw; }
+
+  nav li {
+    width: 19%; }
+
+  h4 {
+    font-size: 1.5rem; }
+
+  h5 {
+    font-size: 1.2rem; }
+
+  #about {
+    padding: 40px; }
+    #about img {
+      width: 80%; }
+
+  #projects {
+    padding: 40px; }
+    #projects .project {
+      margin: 0 40px 40px 40px; }
+    #projects p {
+      font-size: 1.1rem; }
+
+  #skills h2 {
+    padding-bottom: 15px; }
+  #skills li {
+    margin: 25px; }
+  #skills i {
+    font-size: 4.5rem; }
+
+  #contact-form {
+    padding: 40px; }
+    #contact-form form {
+      max-width: 450px; }
+
+  #contact a {
+    margin: 12px; }
+  #contact .icon {
+    width: 50px;
+    height: 50px; }
+
+  footer {
+    padding: 10px; } }
 
 /*# sourceMappingURL=styles.css.map */

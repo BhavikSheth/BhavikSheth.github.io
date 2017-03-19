@@ -3,7 +3,7 @@ $dark-blue: #1976D2;
 $black: #222;
 $nav-height-and-top-pad: 35px;
 $divider: #BDBDBD;
-// @media all and (max-width: 719px) {
+
 * {
 	margin: 0;
 	padding: 0;
@@ -21,17 +21,18 @@ body {
 }
 
 h1 {
-	font-size: 2rem;
-	letter-spacing: 1px; 
+	// font-size: 2.02rem;
+	font-size: 10vw;
+	letter-spacing: 1px;
 }
 
 h2 {
-	font-size: 1.8rem;
-	margin-bottom: 40px;
+	font-size: 9vw;
+	padding-bottom: 40px;
 }
 
 h3 {
-	font-size: 1.35rem;
+	font-size: 6.6vw;
 }
 
 h4 {
@@ -52,7 +53,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	// float: left;
+	float: left;
 	z-index: 9999; 
 	
 	.icon-home:before {
@@ -67,6 +68,7 @@ nav {
 	li {
 		list-style-type: none;
 		display: inline-block;
+		margin-top: 5px; 
 	}
 
 	a {
@@ -75,7 +77,7 @@ nav {
 		padding: 6px;
 		font-size: 1.1rem;
 		position: relative;
-		float: left; 
+		width: 15%;
 		// line-height: 5px;
 		-webkit-transition: all .2s ease;
 		-moz-transition: all .2s ease;
@@ -133,10 +135,14 @@ nav:after {
 		border-radius: 50%;
 		border: 3px solid $blue;
 		margin-bottom: 30px;
+		max-width: 450px;
 	}
 
 	p {
 		text-align: justify;
+		max-width: 500px;
+		margin: 0 auto;
+		font-size: 1.1rem;
 	}
 }
 
@@ -152,6 +158,9 @@ nav:after {
 		-webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
 		-moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
 		box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
+		display: inline-block;
+		max-width: 350px;
+		
 	}
 
 	.project:last-child {
@@ -206,6 +215,12 @@ nav:after {
 	}
 }
 
+#projects:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
 #skills {
 	padding: 40px 20px;
 	border-bottom: 1px solid $divider;
@@ -241,6 +256,7 @@ nav:after {
 	
 	form {
 		background: none;
+		margin: 0 auto;
 		
 		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 		    color:    $black;
@@ -266,7 +282,7 @@ nav:after {
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			resize: none;
-			font-size: 16px;
+			font-size: 1rem;
 		}
 
 		input {
@@ -395,7 +411,95 @@ footer {
 	padding: 7px;
 	font-weight: 400; 
 }
-// }
+
+@media all and (min-width: 480px) {
+	h1 {
+		font-size: 8.5vw;
+	}
+
+	h2 {
+		font-size: 6vw;
+	}
+
+	h3 {
+		font-size: 5.7vw;
+	}
+	
+	nav {
+		li {
+			width: 19%;
+		}
+	}
+
+	h4 {
+		font-size: 1.5rem;
+	}
+
+	h5 {
+		font-size: 1.2rem;
+	}
+
+	#about {
+		padding: 40px;
+		
+		img {
+			width: 80%;
+		}
+	}
+
+	#projects {
+		padding: 40px;
+		
+		.project {
+			margin: 0 40px 40px 40px;
+		}
+
+		p {
+			font-size: 1.1rem;
+		}
+	}
+
+	#skills {
+		h2 {
+			padding-bottom: 15px;
+		}
+
+		li {
+			margin: 25px;
+		}
+
+		i {
+			font-size: 4.5rem;
+		}
+	}
+
+	#contact-form {
+		padding: 40px;
+		
+		form {
+			max-width: 450px;
+		}
+	}
+
+	#contact {
+		a {
+			margin: 12px;
+		}
+
+		.icon {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	footer {
+		padding: 10px;
+	}
+}
+
+@media all and (min-width: 768px) {
+	
+}
 
 // I created this  portfolio without using Bootstrap or Flexbox to prove I can create responsive websites without Bootstrap and have brilliant css skills to position and layout everything correctly without the use of Flexbox :D
 
