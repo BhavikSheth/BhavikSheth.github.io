@@ -1,8 +1,70 @@
 $blue: #2196F3;
 $dark-blue: #1976D2;
 $black: #222;
-$nav-height-and-top-pad: 35px;
 $divider: #BDBDBD;
+$nav-height-and-top-pad: 35px;
+
+@mixin min-size($size) {
+	@media (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin clearing {
+	clear: both;
+	display: block;
+	content: "";
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin box-sizing($box-sizing) {
+	-webkit-box-sizing: $box-sizing;
+	-moz-box-sizing: $box-sizing;
+	box-sizing: $box-sizing;
+}
+
+@mixin box-shadow($box-shadow) {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+
+@mixin placeholder($color, $opacity) {
+	::-webkit-input-placeholder {
+	    color:    $color;
+	    opacity: $opacity;
+	}
+	:-moz-placeholder {
+	   color:    $color;
+	   opacity: $opacity;
+	}
+	::-moz-placeholder {
+	   color:    $color;
+	   opacity: $opacity;
+	}
+	:-ms-input-placeholder {
+	   color:    $color;
+	   opacity: $opacity;
+	}
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin background-size($size) {
+	-webkit-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
 
 * {
 	margin: 0;
@@ -15,9 +77,7 @@ body {
 	padding-top: $nav-height-and-top-pad;
 	background-image: url(../media/background.jpg);
 	background-attachment: fixed;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	@include background-size(cover);
 }
 
 h1 {
@@ -79,11 +139,7 @@ nav {
 		position: relative;
 		width: 15%;
 		// line-height: 5px;
-		-webkit-transition: all .2s ease;
-		-moz-transition: all .2s ease;
-		-ms-transition: all .2s ease;
-		-o-transition: all .2s ease;
-		transition: all .2s ease;
+		@include transition(all .2s ease);
 	}
 
 	a:hover {
@@ -104,11 +160,7 @@ nav {
 	}
 }
 
-nav:after {
-	content: "";
-	display: block;
-	clear: both;
-}
+nav:after { @include clearing; }
 
 #landing {
 	padding: 40px;
@@ -131,8 +183,7 @@ nav:after {
 	
 	img {
 		width: 90%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
+		@include border-radius(50%);
 		border: 3px solid $blue;
 		margin-bottom: 30px;
 		max-width: 450px;
@@ -155,9 +206,7 @@ nav:after {
 		margin-bottom: 40px;
 		background-color: #FFF;
 		width: 100%;
-		-webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
-		-moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
-		box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.25);
+		@include box-shadow(0px 0px 2px 2px rgba(0,0,0,0.25));
 		display: inline-block;
 		max-width: 350px;
 		
@@ -187,11 +236,7 @@ nav:after {
 			padding: 10px;
 		}
 
-		p:after {
-			display: block;
-			content: "";
-			clear: both;
-		}
+		p:after { @include clearing; }
 
 		a {
 			width: 49.5%;
@@ -215,11 +260,7 @@ nav:after {
 	}
 }
 
-#projects:after {
-	display: block;
-	content: "";
-	clear: both;
-}
+#projects:after { @include clearing; }
 
 #skills {
 	padding: 40px 20px;
@@ -238,11 +279,7 @@ nav:after {
 	i {
 		color: $blue;
 		font-size: 3.6rem;
-		-webkit-transition: all .25s ease;
-		-moz-transition: all .25s ease;
-		-ms-transition: all .25s ease;
-		-o-transition: all .25s ease;
-		transition: all .25s ease;
+		@include transition(all .25s ease);
 	}
 
 	i:hover {
@@ -257,30 +294,12 @@ nav:after {
 	form {
 		background: none;
 		margin: 0 auto;
-		
-		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-		    color:    $black;
-		    opacity: 0.5;
-		}
-		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-		   color:    $black;
-		   opacity: 0.5;
-		}
-		::-moz-placeholder { /* Mozilla Firefox 19+ */
-		   color:    $black;
-		   opacity: 0.5;
-		}
-		:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		   color:    $black;
-		   opacity: 0.5;
-		}
-		
+		@include placeholder($black, 0.5);
+
 		* {
 			width: 100%;
 			padding: 10px;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			@include box-sizing(border-box);
 			resize: none;
 			font-size: 1rem;
 		}
@@ -315,11 +334,7 @@ nav:after {
 			background: $blue;
 			color: #FFF;
 			border: none;
-			-webkit-transition: all .25s ease;
-			-moz-transition: all .25s ease;
-			-ms-transition: all .25s ease;
-			-o-transition: all .25s ease;
-			transition: all .25s ease;
+			@include transition(all .25s ease);
 		}
 
 		button:focus {
@@ -346,8 +361,7 @@ nav:after {
 	.icon {
 		width: 40px;
 		height: 40px;
-		border-radius: 50%;
-		
+		@include border-radius(50%);
 	}
 
 	.icon-linkedin {
@@ -495,10 +509,6 @@ footer {
 	footer {
 		padding: 10px;
 	}
-}
-
-@media all and (min-width: 768px) {
-	
 }
 
 // I created this  portfolio without using Bootstrap or Flexbox to prove I can create responsive websites without Bootstrap and have brilliant css skills to position and layout everything correctly without the use of Flexbox :D

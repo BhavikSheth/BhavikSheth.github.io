@@ -52,11 +52,11 @@ nav {
     font-size: 1.1rem;
     position: relative;
     width: 15%;
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    transition: all .2s ease; }
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
   nav a:hover {
     background-color: #1976D2; }
   nav .fa {
@@ -70,9 +70,9 @@ nav {
     margin-bottom: -2px; }
 
 nav:after {
-  content: "";
+  clear: both;
   display: block;
-  clear: both; }
+  content: ""; }
 
 #landing {
   padding: 40px;
@@ -126,9 +126,9 @@ nav:after {
     #projects .view p {
       padding: 10px; }
     #projects .view p:after {
+      clear: both;
       display: block;
-      content: "";
-      clear: both; }
+      content: ""; }
     #projects .view a {
       width: 49.5%;
       color: #222;
@@ -142,9 +142,9 @@ nav:after {
       float: right; }
 
 #projects:after {
+  clear: both;
   display: block;
-  content: "";
-  clear: both; }
+  content: ""; }
 
 #skills {
   padding: 40px 20px;
@@ -156,11 +156,11 @@ nav:after {
   #skills i {
     color: #2196F3;
     font-size: 3.6rem;
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease; }
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
   #skills i:hover {
     color: #1976D2; }
 
@@ -171,19 +171,15 @@ nav:after {
     background: none;
     margin: 0 auto; }
     #contact-form form ::-webkit-input-placeholder {
-      /* WebKit, Blink, Edge */
       color: #222;
       opacity: 0.5; }
     #contact-form form :-moz-placeholder {
-      /* Mozilla Firefox 4 to 18 */
       color: #222;
       opacity: 0.5; }
     #contact-form form ::-moz-placeholder {
-      /* Mozilla Firefox 19+ */
       color: #222;
       opacity: 0.5; }
     #contact-form form :-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
       color: #222;
       opacity: 0.5; }
     #contact-form form * {
@@ -216,11 +212,11 @@ nav:after {
       background: #2196F3;
       color: #FFF;
       border: none;
-      -webkit-transition: all .25s ease;
-      -moz-transition: all .25s ease;
-      -ms-transition: all .25s ease;
-      -o-transition: all .25s ease;
-      transition: all .25s ease; }
+      -webkit-transition: all 0.25s ease;
+      -moz-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease; }
     #contact-form form button:focus {
       outline: none; }
     #contact-form form button:hover {
@@ -233,6 +229,7 @@ nav:after {
   #contact .icon {
     width: 40px;
     height: 40px;
+    -webkit-border-radius: 50%;
     border-radius: 50%; }
   #contact .icon-linkedin {
     fill: #FFF;
