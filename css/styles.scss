@@ -2,7 +2,7 @@ $blue: #2196F3;
 $dark-blue: #1976D2;
 $black: #222;
 $divider: #BDBDBD;
-$nav-height-and-top-pad: 35px;
+
 
 @mixin min-size($size) {
 	@media (min-width: $size) {
@@ -66,46 +66,49 @@ $nav-height-and-top-pad: 35px;
 	background-size: $size;
 }
 
+@mixin background-clip($clip) {
+	-o-background-clip: $clip;
+	background-clip: $clip;
+}
+
+$nav-height-below-600px: 2.2em;
+$nav-height-above-600px: 2.2em;
+
 * {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	@include box-sizing(border-box);
 }
 
 body {
-	font-family: Roboto;
-	padding-top: $nav-height-and-top-pad;
+	font-family: 'Lato', sans-serif;
+	margin-top: $nav-height-below-600px;
+	@include min-size(600px) {
+		margin-top: $nav-height-above-600px;
+	}
 	background-image: url(../media/background.jpg);
 	background-attachment: fixed;
 	@include background-size(cover);
 }
 
-h1 {
-	// font-size: 2.02rem;
-	font-size: 10vw;
-	letter-spacing: 1px;
-}
-
-h2 {
+.heading {
 	font-size: 9vw;
 	padding-bottom: 40px;
+	@include min-size(600px) {
+		font-size: 6vw; 
+	}
+	@include min-size(900px) {
+		// font-size: 4.5vw;
+		font-size: 2.5rem;
+	}
 }
 
-h3 {
-	font-size: 6.6vw;
-}
-
-h4 {
-	font-size: 1.2rem;
-}
-
-h5 {
-	font-size: 1rem;
-	font-weight: 400;
-}
-
-h6 {
-	
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;  
 }
 
 nav {
@@ -114,31 +117,38 @@ nav {
 	top: 0;
 	width: 100%;
 	float: left;
-	z-index: 9999; 
+	z-index: 9999;
 	
-	.icon-home:before {
-  		content: "\e902";
+	@include min-size(600px) {
+		font-size: 1.25em; 
+		letter-spacing: 1px;
 	}
 	
 	ul {
-		height: $nav-height-and-top-pad;
-		// overflow: hidden;
+		height: 2.2em;
+		margin: 0 5px;
+		@include min-size(480px) {
+			margin: 0;
+		}
 	}
 	
 	li {
+		width: 22%;
 		list-style-type: none;
 		display: inline-block;
-		margin-top: 5px; 
+	}
+
+	li:first-child {
+		width: 12%;
 	}
 
 	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		line-height: 2.2em;
 		color: #FFF;
 		text-decoration: none;
-		padding: 6px;
-		font-size: 1.1rem;
-		position: relative;
-		width: 15%;
-		// line-height: 5px;
 		@include transition(all .2s ease);
 	}
 
@@ -147,115 +157,388 @@ nav {
 	}
 
 	.fa {
-		font-size: 1.4rem;
+		font-size: 1.2em;
 		position: relative;
 		top: 1px;
+		
+		@include min-size(600px) {
+			font-size: 1.3em;
+		}
 	}
 
 	#scroll-line {
-		height: 2px;
+		height: 3px;
 		width: 0%;
 		background: $black;
-		margin-bottom: -2px;
+		margin-bottom: -3px;
 	}
 }
 
 nav:after { @include clearing; }
 
-#landing {
-	padding: 40px;
-	text-transform: uppercase;
-	border-bottom: 1px solid $divider;
+/*nav {
+	background-color: $blue;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	float: left;
+	z-index: 9999;
 	
-	h1 {
-		margin: 100px 0 10px 0;
+	ul {
+		height: $nav-height-below-600px;
+		margin: 0 5px;
+		@include min-size(600px) {
+			height: $nav-height-above-600px;
+		}
+		@include min-size(480px) {
+			margin: 0;
+		}
+	}
+	
+	li {
+		width: 22%;
+		
+		list-style-type: none;
+		display: inline-block;
+	}
+	
+	li:first-child {
+		width: 12%;
 	}
 
-	h3 {
-		margin-bottom: 100px;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		line-height: $nav-height-below-600px;
+		color: #FFF;
+		text-decoration: none;
+		@include transition(all .2s ease);
+		
+		@include min-size(600px) {
+			line-height: $nav-height-above-600px;
+			font-size: 1.3rem;
+			letter-spacing: 1px;  
+		}
+	}
+
+	a:hover {
+		background-color: $dark-blue;
+	}
+
+	.fa {
+		font-size: 1.2rem;
+		position: relative;
+		top: 2px;
+		
+		@include min-size(600px) {
+			font-size: 1.6rem;
+		}
+	}
+
+	#scroll-line {
+		height: 3px;
+		width: 0%;
+		background: $black;
+		margin-bottom: -3px;
+	}
+}
+
+nav:after { @include clearing; }*/
+
+#landing {
+	text-transform: uppercase;
+	border-bottom: 1px solid $divider;
+	height: 300px;
+	width: 100%;
+	display: table;
+	@include min-size(600px) {
+		height: 400px;
+	}
+
+	.titles {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	#name {
+		font-size: 10vw;
+		letter-spacing: 1px;
+		margin-bottom: 0.625em;
+		@include min-size(480px) {
+			margin-bottom: 0;
+		}
+		@include min-size(600px) {
+			font-size: 8.5vw; 
+		}
+		@include min-size(900px) {
+			font-size: 4.5rem;
+		}
+	}
+	
+	#main-title {
+		font-size: 6.6vw;
+		@include min-size(600px) {
+			font-size: 5.7vw; 
+		}@include min-size(900px) {
+			font-size: 3rem;
+		}
+	}
+
+	hr {
+		display: block;
+		max-width: 4em;
+		border: 2px solid $blue;
+		margin: 1.5em auto;
+		@include min-size(600px) {
+			margin: 2em auto;
+			max-width: 5em;
+		}
 	}
 }
 
 #about {
-	padding: 40px 20px;
+	padding: 2.5em 1.25em;
 	background-color: #EEE;
 	border-bottom: 2px solid $divider;
-	
-	img {
+	@include min-size(480px) {
+		padding: 2.5em;
+	}
+
+	.about-img {
 		width: 90%;
 		@include border-radius(50%);
-		border: 3px solid $blue;
-		margin-bottom: 30px;
-		max-width: 450px;
+		border: 5px solid $blue;
+		margin-bottom: 2em;
+		max-width: 25em;
+		@include min-size(900px) {
+			width: calc(45% - 1em);
+			float: right;
+			margin-right: 1em;
+			margin-bottom: 0;
+			margin-top: 1.25em; 
+		}
+		@include min-size(1000px) {
+			width: 100%;
+		}
+	}
+	
+	.about-text {
+		margin: 0 auto;
+		@include min-size(700px) {
+			width: 80%;
+		}
+		@include min-size(900px) {
+			width: 55%;
+			float: left;
+			padding-right: 3em;
+			padding-left: 1em;
+		}
+		@include min-size(1000px) {
+			width: calc(100% - 26em); // 1em from margin-right in img and 25em for max-width of image
+			padding-right: 4em;
+		}
 	}
 
 	p {
 		text-align: justify;
-		max-width: 500px;
-		margin: 0 auto;
-		font-size: 1.1rem;
+		font-size: 1em;
+		margin-top: 1em;
+		line-height: 1.4em;
+		@include min-size(1000px) {
+			font-size: 1.25em;
+		}
+	}
+
+	.about-text p:first-child {
+		margin-top: 0;
+	}
+
+	a {
+		color: $blue;
+		text-decoration: none;
+		@include transition(all .25s ease);
+	}
+
+	a:hover {
+		color: $dark-blue; 
 	}
 }
 
+#about:after { @include clearing; }
+
 #projects {
 	background-color: #EEE;
-	padding: 40px 20px;
+	padding: 2.5em 1.25em;
 	border-bottom: 1px solid $divider;
-	
-	.project {
-		margin-bottom: 40px;
-		background-color: #FFF;
-		width: 100%;
-		@include box-shadow(0px 0px 2px 2px rgba(0,0,0,0.25));
-		display: inline-block;
-		max-width: 350px;
-		
+	@include min-size(480px) {
+		padding: 2.5em;
 	}
 
-	.project:last-child {
+	.project-box {
+		float: left;
+		margin-bottom: 2.5em;
+		width: 100%;
+		position: relative;
+		@include min-size(768px) {
+			width: 50%;
+			padding-left: 0.9375em;
+			padding-right: 0.9375em;
+		}
+		@include min-size(1000px) {
+			width: calc(100%/3);
+		}
+		
+		.project {
+			margin: 0 auto;
+			max-width: 22.5em;
+			background-color: #FFF;
+			position: relative;
+			@include box-shadow(0px 0px 2px 2px rgba(0,0,0,0.25));
+			@include min-size(900px) {
+				max-height: 22.5em;
+			}
+
+			img {
+				width: 100%;
+			}
+
+			.caption {
+				@include min-size(900px) {
+					display: none;
+				}
+		
+				h4 {
+					font-size: 1.2em;
+					margin: 0.75em;
+				}
+		
+				h5 {
+					font-size: 1em;
+					font-weight: 400; 
+					margin-bottom: 1em;
+				}
+			}
+		
+			.project-links {
+				border-top: 1px solid $divider;
+				@include min-size(900px) {
+					display: none;
+				}
+				p:after {
+					@include clearing;
+				}
+		
+				a {
+					width: 50%;
+					color: $black;
+					text-decoration: none;
+					padding: 0.75em;
+					@include transition(all .2s ease);
+				}
+		
+				a:hover {
+					background-color: $blue;
+					color: #FFF;
+				}
+		
+				a:first-child {
+					float: left;
+					border-right: 1px solid $divider;
+				}
+		
+				a:last-child {
+					float: right;
+				}
+			}
+
+			.project-overlay {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(34,34,34,0.8);
+				color: #FFF;
+				// @include background-clip(content-box);
+				opacity: 0;
+				display: none;
+				@include transition(all .4s ease);
+				@include min-size(900px) {
+					display: block;
+				}
+				padding: 0.5em;
+				
+				.project-overlay-info {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					height: 60%;
+					width: 95%;
+					margin: -30% 0 0 -47.5%;
+				}
+
+				.project-overlay-title {
+					font-size: 3vw;
+					text-transform: uppercase;
+					margin-bottom: 1.2em;
+					@include min-size(1000px) {
+						font-size: 2vw; 
+					}
+				}
+	
+				.project-overlay-desc {
+					font-size: 2vw;
+					font-weight: 400; 
+					margin-bottom: 3em; 
+					@include min-size(1000px) {
+						font-size: 1.5vw;
+					}
+				}
+	
+				.project-overlay-links {
+					a {
+						padding: 0.8vw;
+						background-color: $blue;
+						color: #FFF;
+						text-decoration: none;
+						@include transition(all .25s ease);
+					}
+	
+					a:first-child {
+						margin-right: 1vw;
+					}
+	
+					a:last-child {
+						margin-left: 1vw;
+					}
+		
+					a:hover {
+						background-color: $dark-blue;
+						cursor: pointer;
+					}
+				}
+	
+			}
+		}
+	}
+	
+	.project-box:last-child {
 		margin-bottom: 0;
 	}
 
-	img {
-		width: 100%;
-	}
+	@include min-size(900px) {
+		.project-box:hover {
+			.project img {
+				filter: blur(5px); 
+			}
 
-	h4 {
-		margin: 10px;
-	}
+			.project-overlay {
+				opacity: 1;
+			}
 
-	h5 {
-		margin-bottom: 10px; 
-	}
-
-	.view {
-		border-top: 1px solid $divider;
-		// height: 100%;
-		
-		p {
-			padding: 10px;
-		}
-
-		p:after { @include clearing; }
-
-		a {
-			width: 49.5%;
-			color: $black;
-			text-decoration: none;
-			
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		a:first-child {
-			float: left;
-			border-right: 1px solid $divider;
-		}
-
-		a:last-child {
-			float: right;
+			.project {
+				box-shadow: none;
+			}
 		}
 	}
 }
@@ -263,22 +546,30 @@ nav:after { @include clearing; }
 #projects:after { @include clearing; }
 
 #skills {
-	padding: 40px 20px;
+	padding: 2.5rem 1.2rem;
 	border-bottom: 1px solid $divider;
+	font-size: 3.6em;
+	@include min-size(480px) {
+			font-size: 4.5em;
+	}
 	
-	ul {
-		
+	h3 {
+		@include min-size(480px) {
+			padding-bottom: 1rem;
+		}
 	}
 
 	li {
 		list-style: none;
 		display: inline-block;
-		margin: 15px;
+		margin: 1rem;
+		@include min-size(480px) {
+			margin: 1.6rem;
+		}
 	}
 
 	i {
 		color: $blue;
-		font-size: 3.6rem;
 		@include transition(all .25s ease);
 	}
 
@@ -287,227 +578,194 @@ nav:after { @include clearing; }
 	}
 }
 
-#contact-form {
-	padding: 40px 20px;
-	padding-bottom: 30px;
+#get-in-touch {
+	padding: 2.5em 1.25em;
+	@include min-size(480px) {
+		padding: 2.5em;
+	}
+
+	.container {
+		padding: 0;
+	}
 	
-	form {
-		background: none;
-		margin: 0 auto;
-		@include placeholder($black, 0.5);
+	#contact-form {
+		margin-bottom: 2.5em;
+		padding-left: 0.75em;
+		padding-right: 0.75em;
+		@include min-size(480px) {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+		
+		form {
+			background: none;
+			margin: 0 auto;
+			max-width: 30em;
+			@include placeholder($black, 0.5);
+			@include min-size(480px) {
+				width: 90%;
+			}
+			@include min-size(768px) {
+				margin-top: 1.5em;
+			}
 
-		* {
-			width: 100%;
-			padding: 10px;
-			@include box-sizing(border-box);
-			resize: none;
-			font-size: 1rem;
+			* {
+				width: 100%;
+				padding: 0.6em;
+				resize: none;
+				font-size: 1em;
+			}
+
+			input {
+				margin-bottom: 0.75em;
+				border: 4px solid $blue;
+				background: transparent;
+				text-align: left;
+			}
+
+			input:focus {
+				outline: none;
+				border-color: $dark-blue;
+			}
+
+			textarea {
+				margin-bottom: 1.25em;
+				height: 100%;
+				border: 4px solid $blue;
+				height: 10em;
+				background: transparent;
+				text-align: left;
+				@include min-size(768px) {
+					height: 12.5em;
+				}
+			}
+
+			textarea:focus {
+				outline: none;
+				border-color: $dark-blue;
+			}
+
+			button {
+				background: $blue;
+				color: #FFF;
+				border: none;
+				@include transition(all .25s ease);
+			}
+
+			button:focus {
+				outline: none;
+			}
+
+			button:hover {
+				background: #1976D2;
+				cursor: pointer;
+			}
 		}
 
-		input {
-			margin-bottom: 10px;
-			border: 3px solid $blue;
-			background: transparent;
-			text-align: left;
-		}
-
-		input:focus {
-			outline: none;
-			border: 3px solid $dark-blue;
-		}
-
-		textarea {
-			margin-bottom: 20px;
-			height: 100%;
-			border: 3px solid $blue;
-			height: 150px;
-			background: transparent;
-			text-align: left;
-		}
-
-		textarea:focus {
-			outline: none;
-			border: 3px solid $dark-blue;
-		}
-
-		button {
-			background: $blue;
-			color: #FFF;
-			border: none;
-			@include transition(all .25s ease);
-		}
-
-		button:focus {
-			outline: none;
-		}
-
-		button:hover {
-			background: #1976D2;
+		@include min-size(768px) {
+			width: 50%;
+			float: right;
 		}
 	}
 
-	.icon {
-		
+	#contact-icons {
+		@include min-size(768px) {
+			width: 50%;
+			float: left;
+			padding-left: 1em;
+			padding-top: 0.5em;
+		}
+
+		a {
+			padding: 0.4em;
+			text-decoration: none;
+			@include min-size(480px) {
+				padding: 1em;
+			}
+			@include min-size(768px) {
+				text-align: left;
+				display: block;
+				padding: 0.4em 0;
+				margin: 0.4em 0;
+			}
+		}
+
+		a:hover {
+			.icon-linkedin, .icon-codepen, .icon-twitter, .icon-mail-envelope-closed {
+				background-color: $dark-blue;
+				@include transition(all .25s ease);
+			}
+
+			.icon-github, .icon-cool2 {
+				fill: $dark-blue;
+				@include transition(all .25s ease-in-out);
+			}
+
+			h6 {
+				color: $blue;
+				@include transition(all .25s ease);
+			}
+		}
+
+		.icon {
+			width: 2.5em;
+			height: 2.5em;
+			@include border-radius(50%);
+			@include min-size(480px) {
+				height: 3.1em;
+				width: 3.1em;
+			}
+			@include min-size(768px) {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 0.6em; 
+			}
+			@include min-size(1200px) {
+				margin-right: 1em;
+			}
+		}
+
+		.icon-linkedin, .icon-codepen, .icon-twitter, .icon-mail-envelope-closed {
+			fill: #FFF;
+			background-color: $blue;
+		}
+
+		.icon-github, .icon-cool2 {
+			fill: $blue;
+			background-color: #FFF;
+		}
+
+		h6 {
+			display: none;
+			font-size: 1em;
+			font-weight: 400;
+			color: $black;
+			vertical-align: middle;
+			@include min-size(768px) {
+				display: inline-block;
+			}
+			@include min-size(900px) {
+				font-size: 1.2em;
+			}
+			@include min-size(1200px) {
+				font-size: 1.5em;
+			}
+		}
 	}
 }
 
-
-#contact {
-	padding-bottom: 30px;
-	a {
-		padding: 7px;
-	}
-
-	.icon {
-		width: 40px;
-		height: 40px;
-		@include border-radius(50%);
-	}
-
-	.icon-linkedin {
-		fill: #FFF;
-		background-color: $blue;
-	}
-
-	.icon-linkedin:hover {
-		background-color: $dark-blue;
-	}
-
-	.icon-github {
-		fill: $blue;
-		background-color: #FFF;
-	}
-
-	.icon-github:hover {
-		fill: $dark-blue;
-	}
-
-	.icon-codepen {
-		fill: #FFF;
-		background-color: $blue; 
-	}
-
-	.icon-codepen:hover {
-		background-color: $dark-blue;
-	}
-
-	.icon-twitter {
-		fill: #FFF;
-		background-color: $blue;
-	}
-
-	.icon-twitter:hover {
-		background-color: $dark-blue;
-	}
-
-	.icon-mail-envelope-closed {
-		fill: #FFF;
-		background-color: $blue;
-	}
-
-	.icon-mail-envelope-closed:hover {
-		background-color: $dark-blue;
-	}
-
-	.icon-cool2 {
-		fill: $blue;
-		background-color: #FFF;
-	}
-
-	.icon-cool2:hover {
-		fill: $dark-blue;
-	}
+#get-in-touch:after {
+	@include clearing;
 }
 
 footer {
 	background-color: $black;
-	color: #FFF; 
-	padding: 7px;
-	font-weight: 400; 
-}
-
-@media all and (min-width: 480px) {
-	h1 {
-		font-size: 8.5vw;
-	}
-
-	h2 {
-		font-size: 6vw;
-	}
-
-	h3 {
-		font-size: 5.7vw;
-	}
-	
-	nav {
-		li {
-			width: 19%;
-		}
-	}
-
-	h4 {
-		font-size: 1.5rem;
-	}
-
-	h5 {
-		font-size: 1.2rem;
-	}
-
-	#about {
-		padding: 40px;
-		
-		img {
-			width: 80%;
-		}
-	}
-
-	#projects {
-		padding: 40px;
-		
-		.project {
-			margin: 0 40px 40px 40px;
-		}
-
-		p {
-			font-size: 1.1rem;
-		}
-	}
-
-	#skills {
-		h2 {
-			padding-bottom: 15px;
-		}
-
-		li {
-			margin: 25px;
-		}
-
-		i {
-			font-size: 4.5rem;
-		}
-	}
-
-	#contact-form {
-		padding: 40px;
-		
-		form {
-			max-width: 450px;
-		}
-	}
-
-	#contact {
-		a {
-			margin: 12px;
-		}
-
-		.icon {
-			width: 50px;
-			height: 50px;
-		}
-	}
-
-	footer {
-		padding: 10px;
+	color: #FFF;
+	padding: 0.6em;
+	font-weight: 400;
+	font-size: 1em;
+	@include min-size(480px) {
+		font-size: 1.1em;
 	}
 }
 

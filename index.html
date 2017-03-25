@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scriptfile.js"></script>
@@ -44,87 +44,180 @@
 
 	<nav>
 		<ul>
-			<li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i>
-</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#skills">Skills</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<!-- keep li's together to remove whitespace for inline-block to work -->
+			<li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
 		</ul>
 		<div id="scroll-line"></div>
 	</nav>
 
 	<div id="landing">
-		<h1>Bhavik Sheth</h1>
-		<h3>Front End Developer</h3>
+		<div class="titles">
+			<h1 id="name">Bhavik Sheth</h1>
+			<hr>
+			<h2 id="main-title">Front End Developer</h2>
+		</div>
 	</div>
 
 	<div id="about">
-		<h2>About Me</h2>
-		<img src="http://steeringseals.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-2.gif" />
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus non nam alias esse earum assumenda sint fugit animi tenetur veniam possimus quas soluta recusandae nemo ullam cupiditate veritatis, excepturi asperiores! Ratione soluta cum, quod labore architecto quos, esse ipsa dignissimos, consequuntur molestiae, repudiandae eligendi sint dolore recusandae laborum saepe mollitia adipisci nisi assumenda! Iure saepe quis commodi totam deserunt vel?</p>
+		<div class="container">
+			<h3 class="heading">About Me</h3>
+			<img class="about-img" src="http://steeringseals.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-2.gif" />
+			<div class="about-text">
+				<p>Hi, I'm Bhavik, a self-taught Front End Developer based in London, UK.</p>
+				<p>Enjoy solving problems therefore love mathematics and programming. After working diligently through the challenge and frustration of solving a complex problem, it's a great feeling of satisfaction when all the pieces of a problem finally come together. Have used several resources to learn programming including FreeCodeCamp, Udacity, Udemy, and Codecademy. Interested and excited to learn ReactJS and Back End Development next.</p>
+				<p>Enjoy going to meetups including Codecademy London and FreeCodeCamp London to meet developers and learn from them.<!-- discover what they are working on, where they work, and what they like to do in their free time.PROBABLY NOT REQUIRED--></p>
+				<p>My personal interests include playing games, playing table tennis, health and fitness, cooking, reading, and biking.</p>
+				<p>I'm currently available for hiring so if you need a fantastic developer, please <a href="#contact-form">get in touch!</a>.</p>
+				<!--<p>I enjoy solving problems which is why I love mathematics and programming. It's a great feeling of satisfaction when all the pieces of a problem come together after working hard through the challenge and frustration[which makes me a perfect fit]MAYBE</p>
+				MAYBE ADD THIS ABOVE LAST PARAGRAPH
+
+			
+
+			-->
+			</div>
+		</div>
 	</div>
 
 	<div id="projects">
-		<h2>Projects</h2>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>Pomodoro Clock</h4>
-			<h5>Flexible Time Management Tool</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+		<div class="container">
+			<h3 class="heading">Projects</h3>
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>Pomodoro Clock</h4>
+						<h5>Flexible Time Management Tool</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">Pomodoro Clock</h4>
+							<h5 class="project-overlay-desc">Flexible Time Management Tool</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>JavaScript Calculator</h4>
-			<h5>Easy to Use Calculator</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>JavaScript Calculator</h4>
+						<h5>Easy to Use Calculator</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">JavaScript Calculator</h4>
+							<h5 class="project-overlay-desc">Easy to Use Calculator</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>Weather App</h4>
-			<h5>Quick and Accurate Local Weather</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>Weather App</h4>
+						<h5>Quick and Accurate Local Weather</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">Weather App</h4>
+							<h5 class="project-overlay-desc">Quick and Accurate Local Weather</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>Random Quote Machine</h4>
-			<h5>Read and Tweet Random Famous Quotes</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>Random Quote Machine</h4>
+						<h5>Read and Tweet Random Famous Quotes</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">Random Quote Machine</h4>
+							<h5 class="project-overlay-desc">Read and Tweet Random Famous Quotes</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>Twitch Status App</h4>
-			<h5>Display Status of Twitch Streamers</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>Twitch Status App</h4>
+						<h5>Display Status of Twitch Streamers</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">Twitch Status App</h4>
+							<h5 class="project-overlay-desc">Display Status of Twitch Streamers</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			<img src="http://www.replacements.com/images/no_image.jpg" />
-			<h4>Wikipedia Viewer</h4>
-			<h5>Search Wikipedia Entries</h5>
-			<div class="view">
-				<p><a href="#">View Demo</a><a href="#">View Source</a></p>
-
+			<div class="project-box">
+				<div class="project">
+					<img src="http://www.replacements.com/images/no_image.jpg" />
+					<div class="caption">
+						<h4>Wikipedia Viewer</h4>
+						<h5>Search Wikipedia Entries</h5>
+					</div>
+					<div class="project-links">
+						<p><a href="#">View Demo</a><a href="#">View Source</a></p>
+					</div>
+					<div class="project-overlay">
+						<div class="project-overlay-info">
+							<h4 class="project-overlay-title">Wikipedia Viewer</h4>
+							<h5 class="project-overlay-desc">Search Wikipedia Entries</h5>
+							<div class="project-overlay-links">
+								<a href="#">View Demo</a>
+								<a href="#">View Source</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="skills">
-		<h2>Skills</h2>
+		<h3 class="heading">Skills</h3>
 		<ul>
 			<li><i class="devicon-html5-plain-wordmark"></i></li>
 			<li><i class="devicon-css3-plain-wordmark"></i></li>
@@ -137,30 +230,46 @@
 			<li><i class="devicon-photoshop-plain"></i></li>
 		</ul>
 	</div>
-
-	<div id="contact-form">
-		<h2>Get in Touch!</h2>
-		<form method="POST" action="http://formspree.io/bhaviksheth20@outlook.com">
-		  <input type="email" name="email" placeholder="Email">
-		  <textarea name="message" placeholder="Message"></textarea>
-		  <button type="submit">Send</button>
-		</form>
-	</div>
-
-	<div id="contact">
-		<a href="https://github.com/BhavikSheth/" target="_blank"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
-		<a href="http://codepen.io/BhavikSheth/" target="_blank"><svg class="icon icon-codepen"><use xlink:href="#icon-codepen"></use></svg></a>
-		<a href="mailto:bhaviksheth20@outlook.com"><svg class="icon icon-mail-envelope-closed"><use xlink:href="#icon-mail-envelope-closed"></use></svg></a>
-		<a href="https://twitter.com/Bhavik__Sheth" target="_blank"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
-		<a href="https://www.linkedin.com/in/BhavikS" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a>
-		<!--
-		<a href="https://github.com/BhavikSheth/" target="_blank"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>Checkout my code at Github</a>
-		<a href="http://codepen.io/BhavikSheth/" target="_blank"><svg class="icon icon-codepen"><use xlink:href="#icon-codepen"></use></svg>See my other projects at Codepen</a>
-		<a href="mailto:bhaviksheth20@outlook.com"><svg class="icon icon-mail-envelope-closed"><use xlink:href="#icon-mail-envelope-closed"></use></svg>Say hi at bhaviksheth20@outlook.com</a>
-		<a href="https://twitter.com/Bhavik__Sheth" target="_blank"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>Tweet me @Bhavik_Sheth</a>
-		<a href="https://www.linkedin.com/in/BhavikS" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg>Connect with me at LinkedIn</a>
-		<a href=""><svg class="icon icon-cool2"><use xlink:href="#icon-cool2"></use></svg>Hire me</a>
-		-->
+	<div id="get-in-touch">
+		<div class="container">
+			<h3 class="heading">Get in Touch!</h3>
+			<div id="contact-form">
+				<form method="POST" action="http://formspree.io/bhaviksheth20@outlook.com">
+				  <input type="email" name="email" placeholder="Email">
+				  <textarea name="message" placeholder="Message"></textarea>
+				  <button type="submit">Send</button>
+				</form>
+			</div>
+	
+			<div id="contact-icons">
+				<a href="https://github.com/BhavikSheth/" target="_blank">
+					<svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+					<h6 class="icons-title">Checkout my code at Github</h6>
+				</a>
+				<a href="http://codepen.io/BhavikSheth/" target="_blank">
+					<svg class="icon icon-codepen"><use xlink:href="#icon-codepen"></use></svg>
+					<h6 class="icons-title">See my other projects at Codepen</h6>
+				</a>
+				<a href="mailto:bhaviksheth20@outlook.com">
+					<svg class="icon icon-mail-envelope-closed"><use xlink:href="#icon-mail-envelope-closed"></use></svg>
+					<h6 class="icons-title">Say hi at bhaviksheth20@outlook.com</h6>
+				</a>
+				<a href="https://twitter.com/Bhavik__Sheth" target="_blank">
+					<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+					<h6 class="icons-title">Tweet me @Bhavik_Sheth</h6>
+				</a>
+				<a href="https://www.linkedin.com/in/BhavikS" target="_blank">
+					<svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg>
+					<h6 class="icons-title">Connect with me at LinkedIn</h6>
+				</a>
+				<!--
+				<a href="">
+					<svg class="icon icon-cool2"><use xlink:href="#icon-cool2"></use></svg>
+					<h6 class="icons-title">Hire me</h6>
+				</a>
+				-->
+			</div>
+		</div>
 	</div>
 	<footer>
 		&copy; 2017 Bhavik Sheth. All rights reserved.
