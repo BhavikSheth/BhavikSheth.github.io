@@ -1,17 +1,18 @@
+
+
+// Scroll Line below navigation
 $(window).scroll(function() {
 	var winTop = $(window).scrollTop(), docHeight = $(document).height(), winHeight = $(window).height();
 	var scrolled = winTop/(docHeight-winHeight)*100;
 	$('#scroll-line').css('width', (scrolled + '%'));
 });
-/*
+
+// Smooth Scrolling
 $(document).ready(function() {
-  $(".scroll").click(function(event) {
-    event.preventDefault();
-    $("html,body").animate({
-      scrollTop: $(this.hash).offset().top
-    }, 500);
-    $('.navbar-default a').removeClass('selected');
-    $(this).addClass('selected');
-  });
+	$('ul').find('a').click(function() {
+		var $href = $(this).attr('href');
+		var $anchor = $($href).offset();
+		console.log($anchor);
+		$('body').animate({ scrollTop: $anchor.top-50 }, 1000);
+	});
 });
-*/

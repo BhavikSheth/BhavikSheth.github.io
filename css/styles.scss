@@ -83,10 +83,7 @@ $nav-height-above-600px: 2.2em;
 
 body {
 	font-family: 'Lato', sans-serif;
-	margin-top: $nav-height-below-600px;
-	@include min-size(600px) {
-		margin-top: $nav-height-above-600px;
-	}
+	padding-top: 50px;
 	background-image: url(../media/background.jpg);
 	background-attachment: fixed;
 	@include background-size(cover);
