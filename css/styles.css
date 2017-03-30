@@ -407,7 +407,7 @@ nav:after {
         font-size: 1em; }
       #get-in-touch #contact-form form input {
         margin-bottom: 0.75em;
-        border: 4px solid #2196F3;
+        border: 3px solid #2196F3;
         background: transparent;
         text-align: left; }
       #get-in-touch #contact-form form input:focus {
@@ -416,7 +416,7 @@ nav:after {
       #get-in-touch #contact-form form textarea {
         margin-bottom: 1.25em;
         height: 100%;
-        border: 4px solid #2196F3;
+        border: 3px solid #2196F3;
         height: 10em;
         background: transparent;
         text-align: left; }
