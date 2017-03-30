@@ -529,7 +529,7 @@ nav:after { @include clearing; }
 			background: none;
 			margin: 0 auto;
 			max-width: 30em;
-			@include placeholder($black, 0.5);
+			@include placeholder($black, 0.75);
 			@include min-size(480px) {
 				width: 90%;
 			}
