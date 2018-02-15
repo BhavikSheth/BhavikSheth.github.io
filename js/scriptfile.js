@@ -16,6 +16,5 @@ $(document).ready(function() {
 function smoothScroll() {
 	var $href = $(this).attr('href');
 	var $anchor = $($href).offset();
-	console.log($anchor);
-	$('body').animate({ scrollTop: $anchor.top-50 }, 1000);
+	$('html, body').animate({ scrollTop: $anchor.top-40 }, 1000);
 }
